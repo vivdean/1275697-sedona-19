@@ -9,9 +9,11 @@
   <body>
     <header class="page-header">
       <nav class="main-nav main-nav--hide main-nav--nojs">
-      <button class="main-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
+        <button class="main-nav__toggle" type="button">
+          <span class="visually-hidden">Открыть меню</span>
+        </button>
         <a class="main-nav__logo">
-            <img class="main-nav__logo-image" src="img/logotyle-mobile-svg.svg" alt="Логотип Седоны»">
+          <img class="main-nav__logo-image" src="img/logotyle-mobile-svg.svg" alt="Логотип Седоны»">
         </a>
         <ul class="main-nav__list">
           <li class="main-nav__item">
@@ -41,31 +43,43 @@
               <img class="catalog__image" src="img/photo-sunset-mobile@2x.jpg" width="280" height="280" alt="Фото заката">
             </a>
             <h4 class="catalog__caption">Неродные просторы</h4>
-            <p class="catalog__text">Автор фото:Борис</p>
-            <p class="catalog__like-number"><span class="visually-hidden">Количество лайков</span>1350</p>
+            <p class="catalog__text">Автор фото: Борис</p>
+            <button class="catalog__button-like">
+              <svg class="catalog__icon-like"></svg>
+            </button>
+            <p class="catalog__number-like"><span class="visually-hidden">Количество лайков</span>1350</p>
           </li>
           <li class="catalog__item">
             <a class="catalog__link" href="#">
               <img class="catalog__image" src="img/photo-cactus-mobile@2x.jpg" width="280" height="280" alt="Фото кактуса">
             </a>
             <h4 class="catalog__caption">Местная растительность</h4>
-            <p class="catalog__text">Автор фото:Сергей</p>
-            <p class="catalog__like-number"><span class="visually-hidden">Количество лайков</span>143</p>
+            <p class="catalog__text">Автор фото: Сергей</p>
+            <button class="catalog__button-like">
+              <svg class="catalog__icon-like"></svg>
+            </button>
+            <p class="catalog__number-like"><span class="visually-hidden">Количество лайков</span>143</p>
           </li>
           <li class="catalog__item">
             <a class="catalog__link" href="#">
               <img class="catalog__image" src="img/photo-roads-mobile@2x.jpg" width="280" height="280" alt="Фото дороги">
             </a>
-            <h4 class="catalog__text">Автор фото:Петр</h4>
-            <p class="catalog__like-number"><span class="visually-hidden">Количество лайков</span>96</p>
+            <h4 class="catalog__text">Автор фото: Петр</h4>
+            <button class="catalog__button-like">
+              <svg class="catalog__icon-like"></svg>
+            </button>
+            <p class="catalog__number-like"><span class="visually-hidden">Количество лайков</span>96</p>
           </li>
           <li class="catalog__item">
             <a class="catalog__link" href="#">
               <img class="catalog__image" src="img/photo-bridge-mobile@2x.jpg" width="280" height="280" alt="Фото Моста Дьявола">
             </a>
             <h4 class="catalog__caption">Мост Дьявола</h4>
-            <p class="catalog__text">Автор фото:Антон</p>
-            <p class="catalog__like-number"><span class="visually-hidden">Количество лайков</span>254</p>
+            <p class="catalog__text">Автор фото: Антон</p>
+            <button class="catalog__button-like">
+              <svg class="catalog__icon-like"></svg>
+            </button>
+            <p class="catalog__number-like"><span class="visually-hidden">Количество лайков</span>254</p>
           </li>
         </ul>
       </section>
@@ -76,12 +90,18 @@
             <div class="range__scale">
               <div class="range__bar"></div>
             </div>
-            <button type="button" class="range__toggle" aria-label="Ругулировать звук"></button>
+            <button class="range__toggle" type="button" aria-label="Перемотать видео"></button>
           </div>
           <div class="player__controls">
-            <svg class="player__icon-control"></svg>
-            <svg class="player__icon-control"></svg>
-            <svg class="player__icon-control"></svg>
+            <button class="player__button-conrol" type="button" aria-label="Воспроизвести заново">
+              <svg class="player__icon-control"></svg>
+            </button>
+            <button class="player__button-conrol" type="button" aria-label="Включить субтитры">
+              <svg class="player__icon-control"></svg>
+            </button>
+            <button class="player__button-conrol" type="button" aria-label="Включить полноэкранный режим">
+              <svg class="player__icon-control"></svg>
+            </button>
           </div>
         </div>
       </div>
