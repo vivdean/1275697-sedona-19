@@ -1,0 +1,27 @@
+@mixin font-info ($size:14px, $weight:400, $line-height:21px) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+@mixin reset-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 10%;
+
+  @media (min-width: $tablet-width) {
+    padding: 0 50px;
+  }
+}

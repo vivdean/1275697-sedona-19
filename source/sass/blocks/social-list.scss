@@ -1,0 +1,38 @@
+.social-list {
+  @include reset-list;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  @media (min-width: $tablet-width) {
+    padding: 0;
+  }
+}
+
+.social-list__item {
+  background-color: $blue;
+  width: 46px;
+  height: 48px;
+  margin-right: 5px;
+}
+
+.social-list__link {
+  background-color: $blue;
+  display: block;
+  padding: 15px 13px;
+
+  &--fb {
+    padding-bottom: 11px;
+  }
+
+  &:hover {
+    background-color: $blue-hover;
+  }
+
+  &:active {
+    fill: $bg-lightgrey;
+    background-color: $blue-down;
+  }
+}

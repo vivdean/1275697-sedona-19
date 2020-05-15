@@ -1,0 +1,26 @@
+.page-footer {
+  padding-top: 20px;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 8%;
+  }
+}
+
+.page-footer__hashtag {
+  @include font-info(21px, 700, 26px);
+}
+
+.page-footer__copyright {
+  line-height: 26px;
+}
+
+.page-footer__copyright-text {
+  @include font-info(14px, 400, 26px);
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+}
