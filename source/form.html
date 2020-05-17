@@ -6,6 +6,7 @@
     <meta name="format-detection" content="telephone=no">
     <title>HTML Academy: Седона</title>
     <link href="css/style.css" rel="stylesheet">
+    <script src="js/picturefill.min.js" async></script>
   </head>
   <body>
     <header class="page-header">
@@ -14,19 +15,17 @@
           <span class="visually-hidden">Открыть меню</span>
         </button>
         <div class="main-nav__wrapper">
-          <ul class="main-nav__list main-nav__list--group-main-photo">
+          <ul class="main-nav__list">
             <li class="main-nav__item main-nav__item--active">
               <a class="main-nav__link" href="index.html">Главная</a>
             </li>
-            <li class="main-nav__item main-nav__item--photo">
+            <li class="main-nav__item">
               <a class="main-nav__link" href="photo.html">Фото и видео</a>
             </li>
-          </ul>
-          <ul class="main-nav__list main-nav__list--group-form-html">
-            <li class="main-nav__item main-nav__item--form">
+            <li class="main-nav__item">
               <a class="main-nav__link" href="form.html">Форма отзыва</a>
             </li>
-            <li class="main-nav__item main-nav__item--html">
+            <li class="main-nav__item">
               <a class="main-nav__link" href="htmlacademy.html">HTML academy</a>
             </li>
           </ul>
@@ -39,15 +38,15 @@
           </a>
         </div>
       </nav>
-    </header>
-    <main>
       <div class="banner">
       </div>
+    </header>
+    <main>
       <section class="reviews">
         <h1 class="reviews__title">Оставьте свой отзыв</h1>
         <p class="reviews__guide-text">Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях</p>
         <form class="reviews__form form-review" action="https://echo.htmlacademy.ru" method="post">
-          <fieldset class="form-review__item">
+          <fieldset class="form-review__item form-review__item--user-info">
             <legend class="form-review__title">Представьтесь:</legend>
             <ul class="form-review__list">
               <li class="form-review__option">
@@ -64,20 +63,20 @@
               </li>
             </ul>
           </fieldset>
-          <fieldset class="form-review__item">
+          <fieldset class="form-review__item form-review__item--user-contacts">
             <legend class="form-review__title">Контактная информация:</legend>
-            <ul class="form-review__list">
-              <li class="form-review__option">
-                <label class="form-review__label" for="user-tel">Контактный телефон*:</label>
+            <ul class="form-review__list form-review__list--user-contacts">
+              <li class="form-review__option form-review__option--user-contacts form-review__option--user-tel">
+                <label class="form-review__label form-review__label--user-contacts" for="user-tel"><span class="form-review__label-hidden">Контактный</span> телефон*:</label>
                 <input class="form-review__input form-review__input--tel" type="tel" id="user-tel" name="tel" pattern="^\+7\d{3}\d{7}$" placeholder="Введите телефон" required="">
               </li>
-              <li class="form-review__option">
-                <label for="user-email" class="form-review__label">Электронная почта*:</label>
+              <li class="form-review__option form-review__option--user-contacts">
+                <label for="user-email" class="form-review__label form-review__label--user-contacts">Электронная почта*:</label>
                 <input class="form-review__input form-review__input--email" type="email" id="user-email" name="email" pattern="(?!(^[.-].*|[^@]*[.-]@|.*\.{2,}.*)|^.{254}.)([a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@)(?!-.*|.*-\.)([a-zA-Z0-9-]{1,63}\.)+[a-zA-Z]{2,15}" placeholder="Введите e-mail" required="">
               </li>
             </ul>
           </fieldset>
-          <fieldset class="form-review__item">
+          <fieldset class="form-review__item form-review__item--radio">
             <legend class="form-review__title">Ваше общее впечатление:</legend>
             <ul class="form-review__list">
               <li class="form-review__option form-review__option--radio">
@@ -94,9 +93,9 @@
               </li>
             </ul>
           </fieldset>
-          <fieldset class="form-review__item">
-            <legend class="form-review__title">Посещенные достопримечательности:</legend>
-            <ul class="form-review__list">
+          <fieldset class="form-review__item form-review__item--checkbox">
+            <legend class="form-review__title">Посещенные<br> достопримечательности:</legend>
+            <ul class="form-review__list form-review__list--checkbox">
               <li class="form-review__option form-review__option--checkbox">
                 <input class="form-review__input form-review__input--checkbox visually-hidden" type="checkbox" name="showplace-Devils Bridge" id="DevilsBridge" value="Devils Bridge" checked="">
                 <label class="form-review__label" for="DevilsBridge">Мост Дьявола</label>
@@ -115,11 +114,16 @@
               </li>
             </ul>
           </fieldset>
-          <p class="form-review__item form-review__item--letter">
+          <div class="form-review__item form-review__item--letter">
             <label class="form-review__title" for="letter-field">Опишите свои эмоции:</label>
-            <textarea class="form-review__input form-review__input--textarea" id="letter-field" name="letter" rows="5" placeholder="Опишите подробно все свои восторги "></textarea>
-          </p>
-          <button class="form-review__button button" type="submit">Отправить отзыв</button>
+            <textarea class="form-review__input form-review__input--textarea" id="letter-field" name="letter" rows="5" placeholder="Опишите подробно все свои восторги"></textarea>
+            <div class="form-review__legend-wrap">
+              <button class="form-review__button button" type="submit">Отправить отзыв</button>
+              <small class="form-review__legend">
+                <sup>*</sup> — обязательные поля
+              </small>
+            </div>
+          </div>
         </form>
       </section>
     </main>
@@ -138,7 +142,7 @@
           </a>
         </li>
         <li class="social-list__item">
-          <a class="social-list__link" href="https://www.facebook.com/htmlacademy" aria-label="Мы в Фейсбуке">
+          <a class="social-list__link social-list__link--fb" href="https://www.facebook.com/htmlacademy" aria-label="Мы в Фейсбуке">
             <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="8.672px" height="18.944px" viewBox="0 0 8.672 18.944" enable-background="new 0 0 8.672 18.944" xml:space="preserve">
               <path  fill="#ffffff" d="M6.275,3.356c0.799,0,1.599,0,2.398,0c0-1.119,0-2.237,0-3.356c-0.959,0-1.92,0-2.878,0C2.656,0.181,1.54,2.387,1.948,6.114 H0v3.518h1.959c0,3.104,0,6.208,0,9.312c1.279,0,2.559,0,3.837,0c0-3.104,0-6.208,0-9.312h2.857V6.114H5.787 C5.765,5.069,5.75,3.709,6.275,3.356z"/>
             </svg>

@@ -8,6 +8,12 @@
     align-items: center;
     padding: 30px 8%;
   }
+
+  @media (min-width: $desktop-width) {
+    max-width: 960px;
+    padding: 0;
+    margin: 30px auto;
+  }
 }
 
 .page-footer__hashtag {
