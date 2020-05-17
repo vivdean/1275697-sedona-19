@@ -1,0 +1,19 @@
+.reviews__title {
+  @include font-info (18px, 700, 26px);
+  margin-top: 20px;
+
+  @media (min-width: $tablet-width) {
+    @include font-info (30px, 700, 26px);
+    margin-top: 40px;
+  }
+}
+
+.reviews__guide-text {
+  @include font-info (14px, 400, 24px);
+  color: $grey;
+  padding: 20px 6.2%;
+
+  @media (min-width: $tablet-width) {
+    padding: 40px 20%;
+  }
+}

@@ -1,0 +1,135 @@
+.catalog__title {
+  @include font-info(18px, 700, 26px);
+  margin-top: 40px;
+
+  @media (min-width: $tablet-width) {
+    @include font-info(30px, 700, 26px);
+  }
+}
+
+.catalog__text {
+  @include font-info(14px, 400, 24px);
+  color: $grey;
+  padding: 20px 7.5%;
+  margin-top: 0;
+
+  @media (min-width: $tablet-width) {
+    padding: 40px 22.2%;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 428px;
+    margin: 0 auto;
+    margin-bottom: 70px;
+    padding: 0;
+  }
+}
+
+.catalog__list {
+  @include reset-list;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 7.7%;
+  }
+
+  @media (min-width: $desktop-width) {
+    @include container;
+    padding: 0;
+  }
+}
+
+.catalog__item {
+  border-top: 1px solid $darkgrey;
+  padding: 20px 6%;
+
+  &:last-child {
+    border-bottom: 1px solid $darkgrey;
+  }
+
+  @media (min-width: $tablet-width) {
+    border-top: none;
+    border-bottom: none;
+    padding: 0;
+
+    &:not(:first-child) {
+      width: 50%;
+    }
+
+    &:first-child {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:first-child) {
+      width: 400px;
+    }
+  }
+}
+
+.catalog__item-image {
+  width: 100%;
+  display: block;
+}
+
+.catalog__item-wrapper {
+  text-align: left;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $white-three;
+    padding: 0 3%;
+    justify-content: space-between;
+    align-items: center;
+
+    &--road {
+      background-color: $darkgrey;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: -80px;
+    background: $black-opacity;
+  }
+}
+
+.catalog__item-caption {
+  @include font-info(14px, 700, 24px);
+  margin-bottom: 0;
+
+  @media (min-width: $desktop-width) {
+    color: $white;
+    opacity: 1;
+  }
+}
+
+.catalog__item-text {
+  @include font-info(14px, 400, 24px);
+  text-transform: none;
+  margin-top: 0;
+
+  @media (min-width: $desktop-width) {
+    color: $white;
+  }
+}
+
+.catalog__item-likesnumber {
+  @include font-info(14px, 700, 24px);
+  margin: 0 10px;
+  display: inline-block;
+
+  @media (min-width: $desktop-width) {
+    color: $white;
+  }
+}
+
+.catalog__item-button {
+  border: none;
+  background: transparent;
+}

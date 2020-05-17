@@ -1,0 +1,318 @@
+.form-review {
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 7.7%;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+.form-review__item {
+  border: none;
+  border-bottom: 1px solid $darkgrey;
+  margin-bottom: 20px;
+  padding: 20px 6.2%;
+
+  &--letter {
+    border-bottom: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 20px 0;
+    width: 100%;
+    border-bottom: none;
+
+    &--radio {
+      order: 1;
+      width: 49%;
+      border-right: 1px solid $darkgrey;
+    }
+
+    &--user-info {
+      order: 2;
+      width: 40%;
+    }
+
+    &--user-contacts {
+      order: 3;
+      border-top: 1px solid $darkgrey;
+    }
+
+    &--checkbox {
+      order: 4;
+      border-top: 1px solid $darkgrey;
+    }
+
+    &--letter {
+      order: 5;
+    }
+  }
+}
+
+.form-review__list {
+  @include reset-list;
+
+  @media (min-width: $tablet-width) {
+    &--checkbox {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px 9%;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    &--user-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &--checkbox {
+      padding: 0;
+      justify-content: space-between;
+      text-align: right;
+    }
+  }
+}
+
+.form-review__title {
+  @include font-info(18px, 700, 26px);
+
+  @media (min-width: $tablet-width) {
+    @include font-info (21px, 700, 26px);
+  }
+}
+
+.form-review__item--user-info .form-review__title {
+  @media (min-width: $tablet-width) {
+    text-align: left;
+  }
+}
+
+.form-review__option {
+  text-align: left;
+  display: flex;
+  margin-bottom: 20px;
+  align-items: baseline;
+
+  &--user-contacts {
+    flex-wrap: wrap;
+  }
+
+  &--radio,
+  &--checkbox {
+    position: relative;
+    padding-left: 80px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+  }
+
+  &--checkbox {
+    width: 240px;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: $desktop-width) {
+    &--user-contacts {
+      flex-wrap: nowrap;
+      width: 50%;
+    }
+
+    &--user-tel {
+      width: 45%;
+    }
+
+    &--checkbox {
+      width: 205px;
+    }
+  }
+}
+
+.form-review__label {
+  @include font-info(14px, 400, 26px);
+  color: $grey;
+  margin-right: 3%;
+}
+
+.form-review__input {
+  @include font-info(18px, 700, 26px);
+  color: $black;
+  background-color: $white-three;
+  border: 4px solid transparent;
+  width: 100%;
+  padding: 12px 3%;
+
+  &--textarea {
+    margin-top: 20px;
+  }
+
+  &:hover {
+    background-color: $darkgrey;
+  }
+
+  &:active {
+    background-color: $white;
+    border: 4px solid $darkgrey;
+  }
+}
+
+
+.form-review__input::placeholder {
+  @include font-info(18px, 700, 26px);
+  color: $black;
+}
+
+.form-review__option--radio .form-review__label,
+.form-review__option--checkbox .form-review__label {
+  @include font-info(18px, 700, 26px);
+  text-transform: none;
+  color: $black;
+}
+
+.form-review__input--radio {
+  & + label::before {
+    @include pseudo;
+    left: 0;
+    top: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: solid 5px $white-three;
+    background-color: $white-three;
+    cursor: pointer;
+  }
+
+  &:hover + label::before,
+  &:focus + label::before {
+    background-color: $darkgrey;
+    border: solid 5px $darkgrey;
+  }
+
+  &:active + label::before {
+    background-color: $grey-down;
+    border: solid 5px $grey-down;
+  }
+
+  &:disabled + label::before {
+    opacity: 0.1;
+  }
+}
+
+.form-review__input--radio:checked {
+  & + label::after {
+    @include pseudo;
+    left: 17px;
+    top: 17px;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 3px solid $grey;
+    background-color: $grey;
+  }
+
+  &:active + label::after {
+    opacity: 0.3;
+  }
+
+  &:disabled + label::after {
+    opacity: 0.1;
+  }
+}
+
+.form-review__input--checkbox {
+  & + label::before {
+    @include pseudo;
+    left: 0;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 10%;
+    border: solid 5px $white-three;
+    background-color: $white-three;
+    cursor: pointer;
+  }
+
+  &:hover + label::before,
+  &:focus + label::before {
+    background-color: $darkgrey;
+    border: solid 5px $darkgrey;
+  }
+
+  &:active + label::before {
+    background-color: $grey-down;
+    border: solid 5px $grey-down;
+  }
+
+  &:disabled + label::before {
+    opacity: 0.1;
+  }
+}
+
+.form-review__input--checkbox:checked {
+  & + label::after {
+    @include pseudo;
+    left: 17px;
+    top: 20px;
+    height: 16px;
+    width: 24px;
+    background-image: url("../img/icon-tick.svg");
+    background-repeat: no-repeat;
+  }
+
+  &:active + label::after {
+    opacity: 0.3;
+  }
+
+  &:disabled + label::after {
+    opacity: 0.1;
+  }
+}
+
+.form-review__button {
+  @include font-info(21px, 700, 26px);
+  padding: 16px 0;
+  width: 100%;
+  border: none;
+
+  @media (min-width: $tablet-width) {
+    width: 50%;
+  }
+}
+
+.form-review__legend-wrap {
+  width: 100%;
+  margin-top: 50px;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
+
+.form-review__legend {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+
+    @include font-info(14px, 400, 26px);
+    color: $grey;
+  }
+}
+
+.form-review__label-hidden {
+  @media (min-width: $desktop-width) {
+    display: none;
+  }
+}
