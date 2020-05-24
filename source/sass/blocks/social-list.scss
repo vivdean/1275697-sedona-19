@@ -19,20 +19,30 @@
 }
 
 .social-list__link {
+  @include transition;
   background-color: $blue;
   display: block;
-  padding: 15px 13px;
+  padding: 17px 13px;
+  padding-bottom: 13px;
 
   &--fb {
-    padding-bottom: 11px;
+    padding-top: 13px;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $blue-hover;
   }
 
   &:active {
-    fill: $bg-lightgrey;
     background-color: $blue-down;
   }
+
+  &:active .social-list__icon {
+    fill: $bg-lightgrey;
+  }
+}
+
+.social-list__icon {
+  fill: $white;
 }

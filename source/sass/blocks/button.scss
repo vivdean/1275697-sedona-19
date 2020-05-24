@@ -6,4 +6,23 @@
   color: $white;
   background-color: $blue;
   text-transform: uppercase;
+  cursor: pointer;
+}
+
+.button--blue {
+  @include transition;
+
+  &:hover,
+  &:focus {
+    background-color: $blue-hover;
+  }
+
+  &:active {
+    color: $bg-lightgrey;
+    background-color: $blue-down;
+  }
+
+  &:disabled {
+    background-color: $darkgrey;
+  }
 }
