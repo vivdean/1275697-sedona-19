@@ -1,55 +1,59 @@
 .search {
-  @include container;
-  padding: 20px 6%;
+  padding: 10px 6%;
   box-sizing: border-box;
 
   @media (min-width: $tablet-width) {
-    margin-top: 50px auto;
-    padding: 20px 20%;
+    padding: 30px 20%;
   }
 
   @media (min-width: $desktop-width) {
-    padding: 40px 20%;
+    max-width: 460px;
+    margin: 60px auto;
+    margin-bottom: 65px;
+    padding: 0;
   }
 }
 
 .search__title {
   @include font-info(21px, 700, 26px);
+  margin-bottom: 20px;
 
   @media (min-width: $tablet-width) {
     @include font-info(30px, 700, 26px);
+    margin-bottom: 30px;
   }
 }
 
 .search__text {
   @include font-info;
   color: $grey;
+  margin-bottom: 35px;
 
   @media (min-width: $tablet-width) {
-    @include font-info(14px, 400, 24px);
+    max-width: 435px;
+    margin: 0 auto;
+    margin-bottom: 43px;
   }
 
   @media (min-width: $desktop-width) {
     margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
   }
 }
 
 .search__link {
   @include font-info(21px, 700, 26px);
-  padding: 17px 0;
+  @include transition;
+  padding: 16px 0;
   width: 100%;
 
-  &:hover {
-    background-color: $blue-hover;
+  @media (min-width: $desktop-width) {
+    margin-top: 20px;
   }
+}
 
-  &:active {
-    color: $bg-lightgrey;
-    background-color: $blue-down;
-  }
-
-  &:disabled {
-    background-color: $darkgrey;
+.search__line-break {
+  @media (min-width: $tablet-width) {
+    display: block;
   }
 }
